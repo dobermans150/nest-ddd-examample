@@ -1,5 +1,5 @@
-import { ProductDto } from 'src/products/interfaces/product';
+import { ProductInterface } from 'src/products/interfaces/product';
 
 export class ProductCreatedEvent {
-  constructor(public readonly product: ProductDto) {}
+  constructor(public readonly product: ProductInterface) {}
 }

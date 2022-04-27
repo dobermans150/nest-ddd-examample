@@ -1,6 +1,5 @@
-import { ProductDto } from '../interfaces/product';
-import { Product } from '../models/product.model';
+import { ProductInterface } from '../interfaces/product';
 
 export interface ProductRepository {
-  create(product: ProductDto): Promise<Product>;
+  create(product: ProductInterface): void;
 }

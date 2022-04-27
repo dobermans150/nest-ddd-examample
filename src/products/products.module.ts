@@ -1,12 +1,21 @@
 import { Module } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
-import { CommandHandlers } from './commands/handlers';
+import { MongooseModule } from '@nestjs/mongoose';
+
 import { ProductsController } from './controllers/products.controller';
+
+import { CommandHandlers } from './commands/handlers';
 import { EventsHandler } from './events/handlers';
-import { ProductRepositoryMongoService } from './repository/services/product-repository-mongo/product-repository-mongo.service';
+
+import { ProductRepositoryMongoService } from './repository/services/product-repository-mongo.service';
+
+import { ProductSchema, Product } from './schemas/product.schema';
 
 @Module({
-  imports: [CqrsModule],
+  imports: [
+    CqrsModule,
+    MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }]),
+  ],
   controllers: [ProductsController],
   providers: [
     ProductRepositoryMongoService,

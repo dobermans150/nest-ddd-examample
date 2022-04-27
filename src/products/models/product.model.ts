@@ -1,9 +1,10 @@
+import { BadRequestException } from '@nestjs/common';
 import { AggregateRoot } from '@nestjs/cqrs';
 import { ProductCreatedEvent } from '../events/impl/ProductCreated.event';
 
 export class Product extends AggregateRoot {
   constructor(
-    private readonly _id: string,
+    /* private readonly _id: string, */
     private readonly name: string,
     private readonly price: number,
     private readonly description: string,
