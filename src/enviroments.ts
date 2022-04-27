@@ -1,5 +1,5 @@
 import { DynamicModule } from '@nestjs/common';
-import { ConfigFactory, ConfigModule, registerAs } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 import config from './config';
 
