@@ -13,6 +13,7 @@ export class Product extends AggregateRoot {
   }
 
   CreateProduct() {
+    //logic
     const product = {
       name: this.name,
       price: this.price,

@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongo:
     image: mongo:5.0
-    envionment:
+    environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
     ports:

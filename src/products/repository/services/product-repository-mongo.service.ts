@@ -5,9 +5,10 @@ import { Model } from 'mongoose';
 import { Product } from 'src/products/schemas/product.schema';
 import { Product as ProductModel } from '../../models/product.model';
 import { CreateProductDto } from '../../dtos/product.dto';
+import { ProductRepository } from '../Product.repository';
 
 @Injectable()
-export class ProductRepositoryMongoService {
+export class ProductRepositoryMongoService implements ProductRepository {
   constructor(
     @InjectModel(Product.name)
     private readonly productModel: Model<Product>,
